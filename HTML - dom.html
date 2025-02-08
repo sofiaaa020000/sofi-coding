@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="validateform()" name="formvalidate">
+      <input type="text" name="name" id="name" placeholder="Name">
+      <input type="email" name="email" id="email" placeholder="Email">
+      <input type="password" name="password" id="password" placeholder="Password">
+      <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateform() {
+            var name = document.formvalidate.name.value
+            var email = document.formvalidate.email.value
+            var password = document.formvalidate.password.value
+
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            }   else if (email == null || email == "") {
+                alert ("Email can't be blank");
+                return false;
+            }   else if (password == null || password =="") {
+                alert("Password can't be blank");
+                return false; 
+            }
+        }
+    </script>
+</body>
+</html>
