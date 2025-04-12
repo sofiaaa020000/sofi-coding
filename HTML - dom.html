@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+ 
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            text-align: center;
+        }
+ 
+        button{
+            width: 150px;
+            margin-bottom: 3px;
+            border-radius: 3px;
+            color: white;
+            margin:0;
+        }
+ 
+        .blue {
+            background-color: blue;
+        }
+ 
+        .red {
+            background-color: red;
+        }
+ 
+        #number {
+            font-size: 100px;
+            width:200px;
+            text-align: center;
+            margin:auto;
+        }
+ 
+ 
+    </style>
 </head>
 <body>
     <form onsubmit="validateform()" name="formvalidate">
@@ -12,6 +47,18 @@
       <input type="password" name="password" id="password" placeholder="Password">
       <input type="submit" value="Submit">
     </form>
+
+    <h1 id="title1" style="color: red;">web tittle </h1>
+    <button type="button" onclick="changecolor()">changecolor</button>
+
+    <div class="container">
+        
+        <p id="number">0</p>
+ 
+        <button class="button blue" onclick= count()>COUNT</button>
+        <br>
+        <button class="button red" onclick= reset()>RESET</button>
+    </div>    
 
     <script>
         function validateform() {
@@ -30,6 +77,32 @@
                 return false; 
             }
         }
+
+        function changecolor() {
+            let other_color = 'red';
+            let title = document.getElementById('title1');
+
+            if (title.style.color == 'red') {
+                title.style.color = 'blue'
+            } else {
+                title.style.color
+            }
+
+        }
+
+        function count () {
+            let number = document.getElementById('number');
+            let count = parseInt(number.innerHTML);
+            count++;
+            number.innerHTML = count;
+        }
+
+        function reset () {
+            let number = document.getElementById('number')
+            number.innerHTML = 0;
+        }
+
+
     </script>
 </body>
-</html>
+</html>  
